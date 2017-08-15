@@ -1,0 +1,37 @@
+<div>
+
+  <table class="table table-responsive">
+    <!-- On rows -->
+    <tr>
+      <th class="table-active">count</th>
+      <th class="table-success">firstDocument</th>
+      <th class="table-warning">lastdocument</th>
+      <th class="table-danger">nextUrl</th>
+    
+    </tr>
+    <!-- On cells (`td` or `th`) -->
+    <tr>
+      <td class="table-active">{{data.count}} </td>
+      <td class="table-success">{{data.firstDocument}}</td>
+      <td class="table-warning">{{data.lastDocument}}</td>
+      <td class="table-danger"><button md-button (click)="loadData(data.nextUrl)">Next</button></td>
+      </tr>
+  </table>
+  <table class="table table-responsive">
+          <tr>
+            <th class="table-active">detailUrl</th>
+            <th class="table-success">location</th>
+            <th class="table-warning">company</th>
+            <th class="table-danger">date</th>
+            <th class="table-info">jobTitle</th>
+          </tr>
+          <!-- On cells (`td` or `th`) -->
+          <tr *ngFor="let item of data.resultItemList">
+            <td class="table-active"><a href="{{item.detailUrl}}">{{item.detailUrl}}</a> </td>
+            <td class="table-success">{{item.location}}</td>
+            <td class="table-warning">{{item.company}}</td>
+            <td class="table-danger">{{item.date}}</td>
+             <td class="table-info">{{item.jobTitle}}</td>
+   </table>
+
+</div>
